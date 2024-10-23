@@ -1,7 +1,5 @@
 ﻿@{
     ViewData["Title"] = "HomePage";
-
-    var allContent = ViewBag.ShowAllContent as string;
 }
 
 <style>
@@ -61,7 +59,6 @@
 
 </style>
 
-
 <html>
 
 <meta name="viewport" content="width=device-width, initial-scale=0.3">
@@ -71,134 +68,164 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&display=swap" rel="stylesheet">
 
+@* /////////////////////////////////// Modal /////////////////////////////////// *@
 
+@*     <div class="modal fade" id="reservationsModal" tabindex="-1" role="dialog" aria-labelledby="TituloModalCentralizado" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="TituloModalCentralizado">Título do modal</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
 
-    <div style="opacity: 65%">
+          <div class="modal-body">
+            
+          </div>
 
-        <div style="font-size: 3rem">
-            <p class="text-center" style="color: black"><b>Hotel Booking Widget</b></p>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary">Salvar mudanças</button>
+          </div>
         </div>
+      </div>
+    </div> *@
 
-        <div class="w3-modal-content w3-card-4" style="max-width:65%">
+    <body>
 
-            <form class="w3-container" style="background-color:black" method="post">
+        <div style="opacity: 65%">
 
-                <p class="text-center" style="font-size: 3rem">Reserve sua suíte</p>
+            <div style="font-size: 3rem">
+                <p class="text-center" style="color: black"><b>Hotel Booking Widget</b></p>
+            </div>
 
-                <div class="section">
+            <div class="w3-modal-content w3-card-4" style="max-width:65%">
 
-                @* /////////////////////////////////// Fild Qtd People /////////////////////////////////// *@
+                <form class="w3-container" style="background-color:black" method="post">
 
-                    <div class="row mt-2">
+                    <p class="text-center" style="font-size: 3rem">Reserve sua suíte</p>
 
-                        <div class="col-6">
+                    <div class="section">
 
-                            <label>Nun de Adutos</label>
+                        @* /////////////////////////////////// Fild Qtd People /////////////////////////////////// *@
 
-                            <select name="qtdAdults" class="form-control">
-                                <option value="1"> 1 </option>
-                                <option value="2"> 2 </option>
-                                <option value="3"> 3 </option>
-                                <option value="4"> 4 </option>
-                                <option value="5"> 5 </option>
-                                <option value="6"> 6 </option>
-                                <option value="7"> 7 </option>
-                                <option value="8"> 8 </option>
-                                <option value="9"> 9 </option>
-                                <option value="10"> 10 </option>
+                        <div class="row mt-2">
+
+                            <div class="col-6">
+
+                                <label>Nun de Adutos</label>
+
+                                <select name="qtdAdults" class="form-control" required>
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                    <option value="4"> 4 </option>
+                                    <option value="5"> 5 </option>
+                                    <option value="6"> 6 </option>
+                                    <option value="7"> 7 </option>
+                                    <option value="8"> 8 </option>
+                                    <option value="9"> 9 </option>
+                                    <option value="10"> 10 </option>
+                                </select>
+                            </div>
+
+                            <div class="col-6">
+
+                                <label>Nun de Crianças</label>
+
+                                <select name="qtdQtdChildren" class="form-control" required>
+                                    <option value="0"> 0 </option>
+                                    <option value="1"> 1 </option>
+                                    <option value="2"> 2 </option>
+                                    <option value="3"> 3 </option>
+                                    <option value="4"> 4 </option>
+                                    <option value="5"> 5 </option>
+                                    <option value="6"> 6 </option>
+                                    <option value="7"> 7 </option>
+                                    <option value="8"> 8 </option>
+                                    <option value="9"> 9 </option>
+                                    <option value="10"> 10 </option>
+                                </select>
+                            </div>
+
+                        </div>
+
+                        @* /////////////////////////////////// Fild Suíte /////////////////////////////////// *@
+
+                        <div class="col-12 mt-4">
+
+                            <label>Suíte</label>
+
+                            <select name="suiteName" class="form-control" required>
+                                <option value="null">Selecione uma suíte</option>
+                                <option value="Suite Presidencial">Suíte Presidencial</option>
+                                <option value="Suite Luxo">Suíte Luxo</option>
+                                <option value="Suite Familiar">Suíte Familiar</option>
+                                <option value="Suite Simples">Suíte Simples</option>
+                                <option value="Suite Master">Suíte Master</option>
                             </select>
                         </div>
 
-                        <div class="col-6">
+                        @* /////////////////////////////////// Fild Dates /////////////////////////////////// *@
 
-                            <label>Nun de Crianças</label>
 
-                            <select name="qtdQtdChildren" class="form-control">
-                                <option value="0"> 0 </option>
-                                <option value="1"> 1 </option>
-                                <option value="2"> 2 </option>
-                                <option value="3"> 3 </option>
-                                <option value="4"> 4 </option>
-                                <option value="5"> 5 </option>
-                                <option value="6"> 6 </option>
-                                <option value="7"> 7 </option>
-                                <option value="8"> 8 </option>
-                                <option value="9"> 9 </option>
-                                <option value="10"> 10 </option>
-                            </select>
+                        <div class="row">
+
+                            <label class="mb-2 mt-4">Selecione as datas</label>
+
+                            <div class="col-6">
+                                <label style="font-size: 1rem">Check-In</label>
+                                <br />
+                                <input type="date" name="checkIn" class="form-control" required />
+                            </div>
+
+                            <div class="col-6">
+                                <label style="font-size: 1rem">Check-Out</label>
+                                <br />
+                                <input type="date" name="checkOut" class="form-control" required />
+                            </div>
+
+                        </div>
+
+                        @* /////////////////////////////////// Fild Cusine /////////////////////////////////// *@
+
+                        <div class="mt-3">
+
+                            <label class="mb-2">Escolha a roupa de cama</label>
+
+                            <div class="form-check">
+                                <input style="margin-top: 1.2rem" name="bedLinen" class="form-check-input" type="radio" id="flexRadioDefault1" value="inverno" checked>
+                                <label class="form-check-label mt-2" for="flexRadioDefault1" style="font-size: 1.5rem">
+                                    Inverno
+                                </label>
+                            </div>
+
+                            <div class="form-check">
+                                <input style="margin-top: 1.2rem" name="bedLinen" class="form-check-input" type="radio" id="flexRadioDefault2" value="verao">
+                                <label class="form-check-label mt-2" for="flexRadioDefault2" style="font-size: 1.5rem">
+                                    Verão
+                                </label>
+                            </div>
+
+                        </div>
+
+                        @* /////////////////////////////////// Fild Btn /////////////////////////////////// *@
+
+                        <div class="mt-3 mb-4 text-center d-grid gap-2 col-6 mx-auto">
+
+                            <button class=" btn btn-outline-success btn-lg" type="submit">Reservar</button>
+
+                            <input type="button" value="Ver Reserva" onclick="@("window.location.href='" + @Url.Action("Index", "Reservations") + "'");" />
+
                         </div>
 
                     </div>
-
-                @* /////////////////////////////////// Fild Suíte /////////////////////////////////// *@
-
-                    <div class="col-12 mt-4">
-
-                        <label>Suíte</label>
-
-                        <select name="suiteName" class="form-control">
-                            <option value="null">Selecione uma suíte</option>
-                            <option value="Suite Presidencial">Suíte Presidencial</option>
-                            <option value="Suite Luxo">Suíte Luxo</option>
-                            <option value="Suite Familiar">Suíte Familiar</option>
-                            <option value="Suite Simples">Suíte Simples</option>
-                            <option value="Suite Master">Suíte Master</option>
-                        </select>
-                    </div>
-
-                @* /////////////////////////////////// Fild Dates /////////////////////////////////// *@
-
-
-                    <div class="row">
-
-                        <label class="mb-2 mt-4">Selecione as datas</label>
-
-                        <div class="col-6">
-                            <label style="font-size: 1rem">Check-In</label>
-                            <br />
-                            <input type="date" name="checkIn" class="form-control"/>
-                        </div>
-                       
-                        <div class="col-6">
-                            <label style="font-size: 1rem">Check-Out</label>
-                            <br />
-                            <input type="date" name="checkOut" class="form-control"/>
-                        </div>
-
-                    </div>
-
-                @* /////////////////////////////////// Fild Cusine /////////////////////////////////// *@
-
-                    <div class="mt-3">
-
-                        <label class="mb-2">Escolha a roupa de cama</label>
-
-                        <div class="form-check">
-                            <input style="margin-top: 1.2rem" name="bedLinen" class="form-check-input" type="radio" id="flexRadioDefault1" value="inverno" checked>
-                            <label class="form-check-label mt-2" for="flexRadioDefault1" style="font-size: 1.5rem">
-                                Inverno
-                            </label>
-                        </div>
-
-                        <div class="form-check">
-                            <input style="margin-top: 1.2rem" name="bedLinen" class="form-check-input" type="radio" id="flexRadioDefault2" value="verao">
-                            <label class="form-check-label mt-2" for="flexRadioDefault2" style="font-size: 1.5rem">
-                                Verão
-                            </label>
-                        </div>
-                  
-                    </div>
-                    
-                @* /////////////////////////////////// Fild Btn /////////////////////////////////// *@
-
-                    <div class="mt-3 mb-4 text-center d-grid gap-2 col-6 mx-auto">
-                        <button class=" btn btn-outline-success btn-lg" type="submit">Reservar</button>
-
-                    </div>
-
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
-    </div>
 
+    </body>
+    
 </html>
+

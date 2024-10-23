@@ -1,0 +1,142 @@
+﻿@{
+    ViewData["Title"] = "Reservations";
+
+    var qtdAdults = ViewBag.ShowQtdAdults as string ;
+    var qtdQtdChildren = ViewBag.ShowQtdQtdChildren as string;
+    var suiteName = ViewBag.ShowSuiteName as string;
+    var checkIn = ViewBag.ShowCheckIn as string;
+    var checkOut = ViewBag.ShowCheckOut as string;
+    var bedLinen = ViewBag.ShowBedLinen as string;
+
+    var allContent = qtdAdults + qtdQtdChildren + suiteName + checkIn + checkOut + bedLinen;
+}
+
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url('assets/bg-site.jpg');
+        background-size: cover;
+        background-position: center;
+        color: white;
+    }
+
+    h1, p, img {
+        max-width: 100%;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: "Agdasima", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    p {
+        padding: 20px;
+        text-align: justify;
+    }
+
+    img {
+        display: block;
+        margin: 0 auto;
+    }
+
+    .btn-login {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    p {
+        font-family: "Agdasima", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: white;
+    }
+
+    label {
+        font-size: 1.5rem;
+        font-family: "Agdasima", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        color: white;
+    }
+
+</style>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+<html>
+
+    <header>
+        <h1> Reservas </h1>
+    </header>
+
+@* 
+    <div class="modal fade" id="copyModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" style="color: blue">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <div class="modal-body text-center">
+                    <strong> Resultado copiado com sucesso! </strong>
+                </div>
+
+            </div>
+        </div>
+    </div> *@
+
+    <body>
+     
+            @if (allContent != null)
+            {
+                <p> Quantidade de Adultos: @qtdAdults </p>
+                <br />
+
+                @if (qtdQtdChildren.Contains("0") == false)
+                {
+                <p> Quantidade de Crianças: @qtdQtdChildren</p>
+                }
+
+                <p> Suíte escolhida: @suiteName </p>
+                <br />
+
+                <p> Data do CheckIn: @checkIn </p>
+                <br />
+
+                <p> Data do CheckOut @checkOut </p>
+                <br />
+
+                <p> Roupa de cama: @bedLinen </p>
+                <br />
+            }
+
+    @*     <button id="btnShowModal" class="btn btn-outline-dark" type="button" onclick="copybutton()" data-bs-toggle="modal" data-bs-target="#copyModal"> Copiar Conversão </button> *@
+    </body>
+
+@section Scripts {
+
+    <script>
+
+        $(function () {
+            $('#copyModal').on('show.bs.modal', function () {
+                var myCopyModal = $(this);
+                clearTimeout(myCopyModal.data('hideInterval'));
+                myCopyModal.data('hideInterval', setTimeout(function () {
+                    myCopyModal.modal('hide');
+                }, 3000));
+            });
+        });
+
+    </script>
+
+}
+
+</html>
+
+
+

@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\DataClient\Index.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Views\Reservations\ReservationsView.cshtml" />
     <None Include="wwwroot\assets\bg-site.jpg" />
   </ItemGroup>
 

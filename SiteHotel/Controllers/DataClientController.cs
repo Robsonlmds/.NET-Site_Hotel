@@ -14,11 +14,14 @@ namespace SiteHotel.Controllers
         [HttpPost]
         public IActionResult Index(string qtdAdults, string qtdQtdChildren, string suiteName, DateOnly checkIn, DateOnly checkOut, string bedLinen)
         {
-            string allContent = "Qtd de adultos: " + qtdAdults + " Qtd de Crianças: " + qtdQtdChildren + " Suíte: " + suiteName + " CheckIn: " + checkIn + " CheckOut " + checkOut + " Roupa de cama: " + bedLinen;
+            string allContent = qtdAdults + "+" + qtdQtdChildren + "+" + suiteName + "+" + checkIn + "+" + checkOut + "+" + bedLinen;
 
-            ViewBag.ShowAllContent = allContent;
+            TempData["ShowAllContent"] = allContent;
+
             return View("HomePage");
         }
+
+
 
     }
 }
