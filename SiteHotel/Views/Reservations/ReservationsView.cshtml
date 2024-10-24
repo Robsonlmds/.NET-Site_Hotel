@@ -69,12 +69,14 @@
 
 </style>
 
+<meta>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<meta>
 
 <html>
 
     <header>
-        <h1> Reservas </h1>
+        <h1> Reserva </h1>
     </header>
 
 @* 
@@ -95,27 +97,30 @@
             @if (allContent != null)
             {
                 <p> Quantidade de Adultos: @qtdAdults </p>
-                <br />
+                <br/>
 
                 @if (qtdQtdChildren.Contains("0") == false)
                 {
-                <p> Quantidade de Crianças: @qtdQtdChildren</p>
+                    <p> Quantidade de Crianças: @qtdQtdChildren </p>
                 }
 
                 <p> Suíte escolhida: @suiteName </p>
-                <br />
+                <br/>
 
                 <p> Data do CheckIn: @checkIn </p>
-                <br />
+                <br/>
 
                 <p> Data do CheckOut @checkOut </p>
-                <br />
+                <br/>
 
                 <p> Roupa de cama: @bedLinen </p>
-                <br />
+                <br/>
+
+                <input type="button" value="Nova Reserva" onclick="@("window.location.href='" + @Url.Action("Index", "DataClient") + "'");" />
             }
 
-    @*     <button id="btnShowModal" class="btn btn-outline-dark" type="button" onclick="copybutton()" data-bs-toggle="modal" data-bs-target="#copyModal"> Copiar Conversão </button> *@
+            @*  <button id="btnShowModal" class="btn btn-outline-dark" type="button" onclick="copybutton()" data-bs-toggle="modal" data-bs-target="#copyModal"> Copiar Conversão </button>   *@
+
     </body>
 
 @section Scripts {
