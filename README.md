@@ -1,10 +1,10 @@
 <a href="https://git.io/typing-svg" class="text-center">
-    <img src="https://readme-typing-svg.demolab.com?font=Silkscreen&size=20&duration=1500&center=true&pause=1000&=true&multiline=true&repeat=false&random=false&width=700&height=110&lines=Hotel+Booking+Widget"
+    <img src="https://readme-typing-svg.demolab.com?font=Silkscreen&size=20&duration=1500&pause=1000&=true&multiline=true&repeat=false&random=false&width=700&height=110&lines=Hotel+Booking+Widget"
          alt="Typing SVG" />
 </a>
 
 <h1 align="center">
-  <img alt="videoSite" title="videoSite" src="SiteHotel/assets/video-hotel-checkin.gif"/>
+  <img alt="videoSite" title="videoSite" src="SiteHotel/wwwroot/assets/video-hotel-checkin.gif"/>
 </h1>
 
 ## Descrição
