@@ -29,3 +29,8 @@ O **Hotel Booking Widget** é uma aplicação web que facilita a reserva de suí
 - **Views**: Arquivos HTML e Razor utilizados para renderizar o conteúdo dinâmico
 - **Controllers**: Gerencia as requisições e as respostas, incluindo o processo de reserva
 - **wwwroot**: Contém arquivos estáticos como imagens, CSS e JS
+
+
+<h1 align="center">
+<img src="https://readme-typing-svg.herokuapp.com/?font=Silkscreen&size=35&center=true&vCenter=true&width=700&height=70&duration=5000&lines=Obrigado+pela+atenção!;" />
+</h1>
